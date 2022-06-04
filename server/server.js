@@ -1,3 +1,4 @@
+const { parse } = require('node-html-parser');
 const { Client } = require('@elastic/elasticsearch')
 const express = require('express');
 const app = express();
@@ -11,17 +12,14 @@ const client = new Client({
   node: 'http://localhost:9200'
 });
 
-
 // Post request will receive data from search form and return results
 app.get('/search/:searchString', async (req, res) => {
   let searchString = ""
 
   if (req.params) {
     searchString = req.params.searchString;
-    // console.log(searchString);
   }
 
-  // const results = await searchPages(searchString).hits;
   const results = await client.search({
     index: 'pages',
     query: {
@@ -30,23 +28,9 @@ app.get('/search/:searchString', async (req, res) => {
       }
     }
   });
-  // console.log(results.hits.hits);
 
   res.json(results.hits.hits);
 });
-
-// app.get('/search/:')
-
-async function searchPages(searchString) {
-  const result = await client.search({
-    index: 'pages',
-    query: {
-      match: { 
-        content: searchString
-      }
-    }
-  });
-}
 
 async function indexPages() {
   let exists = await client.indices.exists({index: 'pages'})
@@ -59,12 +43,22 @@ async function indexPages() {
   });
 
   fs.readdirSync("../data").forEach( async (file) =>  {
-    let fileContent = fs.readFileSync("../data/" + file, {encoding: "utf8"});
+    let documentString = fs.readFileSync("../data/" + file, {encoding: "utf8"});
+    let root = parse(documentString);
+    let titleElements = root.getElementsByTagName("title");
+    let title = "";
+    if (titleElements[0]) {
+      title = titleElements[0].innerHTML;
+    }
+    else {
+      title = file;
+    }
+
     await client.index({
       index: 'pages',
       document: {
-        title: file,
-        content: fileContent,
+        title: title,
+        content: documentString,
       }
     });
   });
