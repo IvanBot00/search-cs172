@@ -1,3 +1,4 @@
+const indexing = require("./indexing")
 const { Client } = require('@elastic/elasticsearch')
 const express = require('express');
 const app = express();
