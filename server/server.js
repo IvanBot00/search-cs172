@@ -1,8 +1,11 @@
 const { Client } = require('@elastic/elasticsearch')
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const fs = require('fs');
 const port = 4000;
+
+app.use(cors());
 
 const client = new Client({
   node: 'http://localhost:9200'
@@ -10,14 +13,29 @@ const client = new Client({
 
 
 // Post request will receive data from search form and return results
-app.get('/search', async (req, res) => {
-  // let searchString = req.body.text;
-  let searchString = "test" // temporary testing search string
+app.get('/search/:searchString', async (req, res) => {
+  let searchString = ""
 
-  const results = await searchPages(searchString);
+  if (req.params) {
+    searchString = req.params.searchString;
+    // console.log(searchString);
+  }
 
-  res.json(results);
-})
+  // const results = await searchPages(searchString).hits;
+  const results = await client.search({
+    index: 'pages',
+    query: {
+      match: {
+        content: searchString
+      }
+    }
+  });
+  // console.log(results.hits.hits);
+
+  res.json(results.hits.hits);
+});
+
+// app.get('/search/:')
 
 async function searchPages(searchString) {
   const result = await client.search({
@@ -28,14 +46,20 @@ async function searchPages(searchString) {
       }
     }
   });
-  console.log(result.hits);
 }
 
 async function indexPages() {
+  let exists = await client.indices.exists({index: 'pages'})
+
+  if (exists)
+    await deletePages();
+
+  await client.indices.create({
+    index: 'pages',
+  });
+
   fs.readdirSync("../data").forEach( async (file) =>  {
     let fileContent = fs.readFileSync("../data/" + file, {encoding: "utf8"});
-    // console.log(file)
-    // console.log(fileContent)
     await client.index({
       index: 'pages',
       document: {
@@ -46,10 +70,14 @@ async function indexPages() {
   });
 
   client.indices.refresh({ index: 'pages' });
-  
 }
 
-// client.indices.delete("pages")
+async function deletePages() {
+  await client.indices.delete({
+    index: 'pages',
+  });
+}
+
 indexPages();
 
 app.listen(port, () => {
