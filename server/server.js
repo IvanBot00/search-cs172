@@ -54,14 +54,24 @@ async function indexPages() {
       title = file;
     }
 
+    let headElements = root.getElementsByTagName("head");
+
+    if (headElements[0]) {
+      root = root.removeChild(headElements[0]);
+    }
+
+    let docBody = root.toString();
+
     await client.index({
       index: 'pages',
       document: {
         title: title,
-        content: documentString,
+        content: docBody,
       }
     });
   });
+
+  console.log("Done loading");
 
   client.indices.refresh({ index: 'pages' });
 }

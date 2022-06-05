@@ -31,7 +31,7 @@ function App() {
       </form>
 
       <div className="results-container">
-        {results.map( doc => <SearchResult key={doc._source.title} document={doc} />)}
+        {results.map( doc => <SearchResult key={doc._id} document={doc} />)}
       </div>
     </div>
   );

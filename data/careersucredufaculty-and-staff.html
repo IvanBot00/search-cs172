@@ -1,849 +1,169 @@
-<!doctype html>
-<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
 <head>
-    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"07d404edfe",applicationID:"837425331"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
-</noscript><script async src="https://www.googletagmanager.com/gtag/js?id=UA-503078-7"></script>
-<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-503078-7", {"groups":"default","anonymize_ip":true,"page_placeholder":"PLACEHOLDER_page_path","allow_ad_personalization_signals":false});</script>
-<link rel="canonical" href="https://careers.ucr.edu/faculty-and-staff" />
-<meta name="description" content="" />
-<meta property="og:site_name" content="Career Center" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://careers.ucr.edu/faculty-and-staff" />
-<meta property="og:title" content="Faculty &amp; Staff" />
-<meta property="og:description" content="" />
-<meta property="og:updated_time" content="2021-08-25T16:04:30-0700" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="" />
-<meta name="twitter:title" content="Faculty &amp; Staff" />
-<meta name="twitter:url" content="https://careers.ucr.edu/faculty-and-staff" />
-<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
-<meta name="MobileOptimized" content="width" />
-<meta name="HandheldFriendly" content="true" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/themes/custom/ucr_design_1/favicon.ico" type="" />
-<link rel="revision" href="https://careers.ucr.edu/faculty-and-staff" />
-<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
-
-    <title>Faculty &amp; Staff | Career Center</title>
-    <link rel="stylesheet" media="all" href="/sites/g/files/rcwecm5691/files/css/css_K-mYKzUJEHqDy32ciOm8J1-pzS0g5tAzvRQn6sddf0A.css" />
-<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto+Slab:400,700|Roboto:400,700" />
-<link rel="stylesheet" media="all" href="/sites/g/files/rcwecm5691/files/css/css_Q2v2UQ8QFjyJWvHcsMKGY_tqvguQmAupujMsVlANjGc.css" />
-
-    
-    <style type="text/css">
-    <!--
-     div.embedded-entity {
-width: fit-content !important;
-}
-
-
-.audience-container .audience-links {
-    background-color: #DE7027;
-}
-
-.audience-container .audience-links .audience-button>a:hover {
-    background-color: #c86422;
-}
-
-
-div.main-nav-bar #audience-links-mobile-view .is-accordion-submenu-parent:not(.has-submenu-toggle)>a {
-    background-color: #fe8d3b;
-    color: white;
-}
-.main-nav-bar #audience-links-mobile-view .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after {
-    border-color: white;}
-
-a[href*="//"]:after {
-    display: none;
-}     -->
-    </style>
-    </head>
-<body class="layout path-node node--type-page">
-    
-      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
-        <div class="webpage-content">
-    <header role="banner" data-sticky-container>
-        <div class="header-sticky-container" data-ucr-sticky="1" data-ucr-mobile-sticky="1">
-            <div class="grid-container full">
-                                                <div class="grid-x">
-                    <div class="cell small-order-2 medium-order-1 audience-container">
-    <div class="grid-container audience-menu-bar">
-        <div class="grid-x align-middle">
-            <div class="cell medium-shrink show-for-medium global-header-menu">
-              <a class="skip-main" href="#main">Skip to main content</a>
-                <nav aria-label="global header menu">
-                    <ul class="menu">
-                        <li><a href="https://www.ucr.edu/alpha" target="_blank">A to Z Listing</a></li>
-                        <li><a href="https://campusmap.ucr.edu" target="_blank">Campus Map</a></li>
-                        <li><a href="https://profiles.ucr.edu" target="_blank">Find People</a></li>
-                        <li><a href="https://news.ucr.edu" target="_blank">News</a></li>
-                        <li><a href="https://www.ucr.edu" target="_blank">UCR Home</a></li>
-                    </ul>
-                </nav>
-            </div>
-             <div id="block-ucr-design-1-organizationname" data-block-plugin-id="ucr_global_organization_name" class="cell auto hide-for-medium org-name">
-    
-        
-              <a class="skip-main" href="#main">Skip to main content</a>
-
-<p class="parent-org-title">
-    <a href="https://ucr.edu">University of California, Riverside</a>
-</p>
-
-    </div>
-    <div id="block-ucr-design-1-ucriversideaudiencesearchblock" data-block-plugin-id="ucr_global_audience_search" class="cell medium-shrink show-for-medium">
-        
-                
-            <section class="google-search">
-        <button class="button audience-search-button" data-open="gscSearchFormModal">Search</button>
-    </section>
-
-    </div>
-<div id="audience-links-desktop-view" data-block-plugin-id="system_menu_block:ucr-audience-menu" class="cell medium-shrink show-for-medium audience-links-desktop" aria-label="Audience Links desktop view">
-    
-        
-            
-  
-  
-            <nav class="audience-links">
-        <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown" data-closing-time="100" data-alignment="left">
-    
-                        <li class="audience-button is-dropdown-submenu-parent">
-                        <a href="" target="_self" title="Handshake Login">UCR Handshake Login</a>
-                                      
-  
-            <ul class="vertical menu">
-    
-                        <li>
-                        <a href="https://app.joinhandshake.com/login" target="_blank" title="Employers Login">Employers</a>
-                            </li>
-                        <li>
-                        <a href="https://auth.ucr.edu/cas/login?service=https%3A//ucr.joinhandshake.com/login%3Fschool_id%3D627" target="_blank" title="Students Login">Students</a>
-                            </li>
-                        <li>
-                        <a href="https://ucr.joinhandshake.com/login" target="_blank" title="Alumni Login">Alumni</a>
-                            </li>
-            </ul>
-        
-                            </li>
-            </ul>
-      </nav>  
-
-
-    </div>
-             <div class="cell shrink hide-for-medium" data-responsive-toggle="main-menu-container" data-hide-for="medium">
-                <button class="mdi mdi-menu button mobile-menu-expander" id="mobile-menu-expander" type="button" data-toggle="main-menu-container">
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-                    <div class="cell small-order-1 medium-order-2 masthead-container">
-    <div class="grid-container">
-        <div class="grid-x align-middle">
-                 <div class="cell shrink">
-        <a class="masthead-logo-line" href="/">
-            <span class="show-for-sr">UC Riverside</span>
-        </a>
-    </div>
-    <div class="cell auto">
-        <h1 class="masthead-title">
-            <a href="/"> Career Center </a>
-        </h1>
-    </div>
-    <div class="cell auto show-for-medium">
-                <p class="slogan">Connect • Inspire • Empower</p>
-            </div>
-         </div>
-    </div>
-</div>
-
-                    <div class="cell small-order-3 medium-order-3 main-nav-bar">
-    <div class="grid-container" id="main-menu-container" data-animate="fade-in fade-out">
-        <div class="grid-x">
-                 <div id="block-ucr-design-1-ucriversideaudiencesearchblock-2" data-block-plugin-id="ucr_global_audience_search" class="cell hide-for-medium">
-        
-                
-            <section class="google-search">
-        <button class="button audience-search-button" data-open="gscSearchFormModal">Search</button>
-    </section>
-
-    </div>
-<div id="block-ucr-design-1-main-menu" data-block-plugin-id="menu_block:main" class="cell main-menu-cell">
-    
-        
-                        <nav id="primary-site-menu" aria-labelledby="primary-site-menu">
-    <ul class="standard-menu vertical medium-horizontal menu align-center-middle" data-responsive-menu="accordion medium-dropdown" data-closing-time="200">
-                <li>
-        <a href="/" target="_self" title="Home" data-drupal-link-system-path="&lt;front&gt;">Home</a>
-                </li>
-            <li>
-        <a href="/welcome-employers" target="_self" title="Employers" data-drupal-link-system-path="node/21">Employers</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/welcome-employers" title="Employers" data-drupal-link-system-path="node/21">Welcome Employers</a>
-                </li>
-            <li>
-        <a href="/employers/post-a-job" title="Post a Job" data-drupal-link-system-path="node/241">Post a Job</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/employers/recruiting-policies">Recruiting Policies</a>
-                </li>
-            <li>
-        <a href="/employers/career-fairs" target="_self" title="Career Fairs" data-drupal-link-system-path="node/281">Career Fairs</a>
-                </li>
-            <li>
-        <a href="/employers/recruit-on-campus" target="_self" title="Recruiting Services" data-drupal-link-system-path="node/251">Recruit at UCR</a>
-                </li>
-            <li>
-        <a href="/employers/partnerships-and-involvement" target="_self" title="Branding Services" data-drupal-link-system-path="node/301">Build your brand</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/employers/internship-program" title="Internships">Internships</a>
-                </li>
-            <li>
-        <a href="/employers/work-study" title="Work-Study" data-drupal-link-system-path="node/291">Work-Study Program</a>
-                </li>
-            <li>
-        <a href="/employers/student-on-campus-employment-program" target="_self" title="Student On-Campus Employment Program" data-drupal-link-system-path="node/246">On Campus Employment</a>
-                </li>
-            <li>
-        <a href="/employers/graduate-recruiters/graduate-and-professional-school-representative-resources" title="Graduate Recruiters" data-drupal-link-system-path="node/311">Graduate Recruiters</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/employers/partnerships-and-involvement/alliance-partners">Alliance Partners</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="/students" target="_self" title="Students" data-drupal-link-system-path="node/121">Students</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/students" title="Students" data-drupal-link-system-path="node/121">Students</a>
-                </li>
-            <li>
-        <a href="" title="Career Planning">Career Planning</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/resources/career-planning" title="Making Career Decisions" data-drupal-link-system-path="node/161">Making Career Decisions</a>
-                </li>
-            <li>
-        <a href="/resources/career-planning/explore-options" title="Explore Options" data-drupal-link-system-path="node/216">Exploring Options</a>
-                </li>
-            <li>
-        <a href="/resources/career-planning/college-specific-milestones" title="Staying on Track" data-drupal-link-system-path="node/211">Staying on Track</a>
-                </li>
-            <li>
-        <a href="/students/preparing-graduate-professional-schools" target="_self" title="Preparing for Graduate &amp; Professional Schools" data-drupal-link-system-path="node/381">Preparing for Graduate &amp; Professional Schools</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="" title="Gain Experience">Gain Experience</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/gain-experience/work-study" target="_self" title="Work-Study Program" data-drupal-link-system-path="node/366">Work-Study Program</a>
-                </li>
-            <li>
-        <a href="/students/internship" target="_self" title="Internships" data-drupal-link-system-path="node/351">Internships</a>
-                </li>
-            <li>
-        <a href="https://se.ucr.edu/research/portal" target="_blank">Undergraduate Research</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/students/student-jobs/community-services">Community Service</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/students/student-jobs/work-abroad">Work Abroad</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/resources/job-search-strategies/how-search-job" title="Getting Hired">Getting Hired</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="https://careers.ucr.edu/resources/job-search-strategies/how-search-job">Finding Opportunities</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/resources/job-search-strategies/resumes">Resumes &amp; Cover Letters</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/resources/job-search-strategies/interviewing">Interviewing</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/resources/job-search-strategies/networking">Building Connections</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="" title="Resource Hub">Resource Hub</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/resources/online-workshops-and-resources" title="Online Workshops and Resources" data-drupal-link-system-path="node/446">Online Workshops and Resources</a>
-                </li>
-            <li>
-        <a href="/resources/ucr-handshake" title="UCR Handshake" data-drupal-link-system-path="node/116">UCR Handshake</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/resources/job-search-strategies/rprofessional-career-closet">R&#039;Professional Career Closet</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/students/student-jobs/avoid-scams-and-fraud">Avoid Scams &amp; Fraud</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="/grad-students" title="Graduate Students" data-drupal-link-system-path="node/411">Graduate Students</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="/communities" title="Communities" data-drupal-link-system-path="node/811">Communities</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="https://careers.ucr.edu/communities#asian_pacific_students" title="Asian Pacific Students">Asian Pacific Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#black_african_american_students" title="Black &amp; African American Students">Black &amp; African American Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#differently_abled_students" title="Differently Abled Students">Differently Abled Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#formerly_incarcerated_students" title="Formerly Incarcerated Students">Formerly Incarcerated Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#foster_youth" title="Foster Youth">Foster Youth</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#international_students" title="International Students">International Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#latinx_students" title="Latinx Students">Latinx Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#lgbtq_students" title="LGBTQ Students">LGBTQ Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#middle_eastern_students" title="Middle Eastern Students">Middle Eastern Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#native_american_students" title="Native American Students">Native American Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#student_veteran" title="Student Veterans">Student Veterans</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#undocumented_students" title="Undocumented Students">Undocumented Students</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/communities#women" title="Women">Women</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="/events" target="_self" data-drupal-link-system-path="node/51">Events</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/events" target="_self" data-drupal-link-system-path="node/51">All Events</a>
-                </li>
-            <li>
-        <a href="/events/career-fairs" title="Career Fairs" data-drupal-link-system-path="node/131">Career Fairs</a>
-                </li>
-            <li>
-        <a href="/events/featured-employer" title="Employers on Campus" data-drupal-link-system-path="node/151">Employers on Campus</a>
-                </li>
-            <li>
-        <a href="/events/workshops" title="Workshops" data-drupal-link-system-path="node/136">Workshops</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/first-destination">Outcomes</a>
-                </li>
-            <li>
-        <a href="/faculty-and-staff" title="Campus Partners" data-drupal-link-system-path="node/76" class="is-active">Campus Partners</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/faculty-and-staff" title="Faculty &amp; Staff" data-drupal-link-system-path="node/76" class="is-active">Faculty &amp; Staff</a>
-                </li>
-            <li>
-        <a href="https://ucr.my.workfront.com/requests/new?projectID=5d883e79009847d56d124b35b50d1881&amp;path=" target="_blank" title="Career Center Speaker Request">Career Center Speaker Request</a>
-                </li>
-            <li>
-        <a href="https://ucr.my.workfront.com/requests?activeTab=tab-new-helpRequest&amp;projectID=589cdc340010a717b50a00fe8f2c0703&amp;path=589cdedb0013a2209dada52fa7f49275" target="_blank" title="Career Center Room Rental Request">Career Center Room Rental Request</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/alumni">Alumni</a>
-                </li>
-            <li>
-        <a href="https://careers.ucr.edu/parents-and-family">Parents &amp; Family</a>
-                </li>
-            </ul>
-        
-                </li>
-            <li>
-        <a href="/about-us/contact-us" target="_self" data-drupal-link-system-path="node/86">About Us</a>
-                                <ul class="vertical menu submenu">
-                <li>
-        <a href="/about-us/contact-us" title="Contact Us" data-drupal-link-system-path="node/86">Contact Us</a>
-                </li>
-            <li>
-        <a href="/about-us/career-center-peer-advisors" title="Career Center Peer Advisors" data-drupal-link-system-path="node/101">Career Center Peer Advisors</a>
-                </li>
-            <li>
-        <a href="/about-us/annual-report" data-drupal-link-system-path="node/816">Values and Impact</a>
-                </li>
-            </ul>
-        
-                </li>
-            </ul>
-</nav>
-        
-
-
-
-
-    </div>
-<div class="cell global-header-menu show-for-small-only">
-  <nav aria-label="global header menu">
-    <ul class="menu">
-      <li class="ucr-home-link-mobile "><a href="https://www.ucr.edu" target="_blank">UCR Home</a></li>
-    </ul>
-  </nav>
-</div>
-
-<div id="audience-links-mobile-view" data-block-plugin-id="system_menu_block:ucr-audience-menu" class="cell hide-for-medium audience-links-mobile" aria-label="Audience Links mobile view">
-    
-        
-            
-  
-  
-            <nav class="audience-links">
-        <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown" data-closing-time="100" data-alignment="left">
-    
-                        <li class="audience-button is-dropdown-submenu-parent">
-                        <a href="" target="_self" title="Handshake Login">UCR Handshake Login</a>
-                                      
-  
-            <ul class="vertical menu">
-    
-                        <li>
-                        <a href="https://app.joinhandshake.com/login" target="_blank" title="Employers Login">Employers</a>
-                            </li>
-                        <li>
-                        <a href="https://auth.ucr.edu/cas/login?service=https%3A//ucr.joinhandshake.com/login%3Fschool_id%3D627" target="_blank" title="Students Login">Students</a>
-                            </li>
-                        <li>
-                        <a href="https://ucr.joinhandshake.com/login" target="_blank" title="Alumni Login">Alumni</a>
-                            </li>
-            </ul>
-        
-                            </li>
-            </ul>
-      </nav>  
-
-
-    </div>
-         </div>
-    </div>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div id="content-container">
-                        <div class="grid-container">
-                                <div class="grid-x grid-padding-x grid-padding-y primary-content-header">
-                        <div id="block-ucr-design-1-breadcrumbs" data-block-plugin-id="system_breadcrumb_block" class="cell">
-    
-        
-                <div><span id="system-breadcrumb" class="visually-hidden">Breadcrumb</span></div>
-    <div class="grid-container full">
-        <div class="grid-x breadcrumb-container">
-            <div class="shrink cell breadcrumb-home">
-                <a href="/"><span class="mdi mdi-home breadcrumb-home-icon" aria-label="Redirects to the homepage of this site."></span></a>
-            </div>
-            <div class="auto cell breadcrumb-list">
-                <nav aria-labelledby="system-breadcrumb">
-                    <ul class="breadcrumbs">
-                                                                                  <li class="list-no-display"><span>&nbsp;</span></li>
-                                                                                                                <li>
-                                                                            <span>Faculty &amp; Staff</span>
-                                                                    </li>
-                                                                        </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    </div>
-<div id="block-ucr-design-1-page-title" data-block-plugin-id="page_title_block" class="cell">
-    
-        
-            
-  <h1 class="page-title"><span>Faculty &amp; Staff</span>
-</h1>
-
-
-    </div>
-
-
-                </div>
-                                <div class="grid-x grid-padding-x system-admin-controls">
-                    
-                </div>
-                            </div>
-            <div id="main" class="grid-container full primary-content-area">
-                <div class="grid-x">
-                                    <div class="cell large-auto small-order-3 medium-order-3 large-order-2 pca-content">
-                          <div>
-    <div id="block-ucr-design-1-content" data-block-plugin-id="system_main_block">
-  
-    
-      <article role="article" about="/faculty-and-staff">
-
-  
-    
-
-  
-  <div>
-        <div  class="layout layout-one-col grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="cell">
-                                    <div  class="layout__region layout__region--main">
-                        <div data-block-plugin-id="extra_field_block:node:page:content_moderation_control">
-  
-    
-      
-  </div>
-
-                    </div>
-                            </div>
-        </div>
-    </div>
-    <div  class="layout layout-two-col grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="cell medium-9">
-                                    <div  class="layout__region layout__region--column-1">
-                        <div data-block-plugin-id="field_block:node:page:body">
-  
-    
-      <div class="basic-body">
-                        <span><div alt="Faculty &amp; Staff" data-embed-button="media_browser" data-entity-embed-display="media_image" data-entity-embed-display-settings="hero_slider_medium_tablet" data-entity-type="media" data-entity-uuid="aefae22c-ad2f-401a-a7a2-798359f97fc1" title="Faculty &amp; Staff" data-langcode="en" class="embedded-entity">  <img src="/sites/g/files/rcwecm5691/files/styles/hero_slider_medium_tablet/public/uc_riverside_career_center_faculty_and_staff_header.jpg?h=10cfd30f&amp;itok=5GUkOGrQ" width="1024" height="450" alt="Faculty &amp; Staff" title="Faculty &amp; Staff" loading="lazy" typeof="foaf:Image" /></div>
-<h3 class="separator-line-before">Help Your Students Plan Ahead</h3>
-
-<p>The Career Center is committed to establishing collaborative relationships with campus partners in an effort to promote the social equity and mobility of UCR students. We recognize that faculty and staff across the university play a role in the career development of students, and we invite you to partner with us. Learn more about opportunities to connect below or reach out to the Student &amp; College Engagement Team at <a href="mailto:careercounseling@ucr.edu" rel="noreferrer noopener" target="_blank">careercounseling@ucr.edu</a>.  </p>
-
-<hr /></span>
-            </div>
-
-  </div>
-    <div data-block-plugin-id="block_content:393d0896-b75a-41a0-b9c7-82d85b99406b" class="ucr-custom-block">
-        <div class="grid-container full">
-            <div class="grid-x grid-padding-x">
-                
-                                
-                                <div class="cell">
-                    <ul class="accordion ucr-accordion" data-accordion data-allow-all-closed=true data-deep-link="true" data-update-history="true" id="accordion-1b7ef3311141e6f9f6a357448e9dcc80">
-                                <li  class="paragraph paragraph--type--accordion paragraph--view-mode--default accordion-item" data-accordion-item>
-        <a href="#invite_us_to_your_classroom" class="accordion-title">
-            Invite Us to Your Classroom    </a>
-        <div class="accordion-content" data-tab-content id="invite_us_to_your_classroom">
-            
-            <p>Career Center counselors and peer advisors are available to deliver career presentations to campus groups, classes and student organizations. Submit your request at least one month before the desired program date. We require participation of at least 15 students.  Here are some options of what we offer:</p>
-
-<ul><li>Workshops/Presentations on topics such as our overview of services, career exploration, resume writing, and more</li>
-	<li>Employer Information Session (Company/Organization/graduate programs representatives come and share information such as their opportunities and application process)</li>
-</ul><p><a href="https://ucr.my.workfront.com/requests/new?projectID=5d883e79009847d56d124b35b50d1881&amp;path=" target="_blank">Request a Career Center program</a>. </p>
-
-<p>*Note: Programs are requested through a Project Management platform called WorkFront. All communications regarding your request will take place through this platform. If you have any trouble accessing the link, please reach out to the <a href="mailto:careercounseling@ucr.edu" title="Student &amp; College Engagement Team">Student &amp; College Engagement Team</a> for assistance. </p>
-    
-        </div>
-    </li>
-            <li  class="paragraph paragraph--type--accordion paragraph--view-mode--default accordion-item" data-accordion-item>
-        <a href="#share_our_programming" class="accordion-title">
-            Share Our Programming    </a>
-        <div class="accordion-content" data-tab-content id="share_our_programming">
-            
-            <h5>Career Fairs Open Doors</h5>
-
-<p>Each year, the Career Center hosts a number of <a href="/events/career-fairs" title="Career Fairs">Career Fairs.</a> These are one-day recruiting events for firms in search of candidates for full-time, part-time, and internship positions.</p>
-
-<h5>Workshops &amp; Information Sessions</h5>
-
-<p>Every quarter the Career Center offers a variety of workshops, information sessions, and networking events for students geared to help students from beginning to build their resume to those who have begun to plan for life after college. Information sessions allow students to meet and talk to representatives of top companies. Throughout the years there are many formal and informal networking events from coffee chats to etiquette dinners.</p>
-
-<p><a href="https://careers.ucr.edu/events" title="Career Fairs">Check the Career Center calendar</a> for any upcoming events that may address your students’ needs.</p>
-    
-        </div>
-    </li>
-            <li  class="paragraph paragraph--type--accordion paragraph--view-mode--default accordion-item" data-accordion-item>
-        <a href="#connect_with_your_career_specialist" class="accordion-title">
-            Connect with Your Career Specialist    </a>
-        <div class="accordion-content" data-tab-content id="connect_with_your_career_specialist">
-            
-            <p>Each college has a designated Career Specialist to support students, faculty, and staff. We invite you to connect with your Career Specialist to discuss partnerships and programming that would best support your students!</p>
-
-<p> </p>
-
-<p><!--%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Fiframe-resizer%2F3.5.16%2FiframeResizer.min.js%22%3E%3C%2Fscript%3E-->
-<style type="text/css">
-<!--/*--><![CDATA[/* ><!--*/
-#pe-018d2a4e-2867-62eb-d18c-b404909c4fa0{width: 1px;min-width: 100%;border:none;min-height:300px;}
-
-/*--><!]]>*/
-</style></p>
-
-<p><iframe height="100%" id="pe-018d2a4e-2867-62eb-d18c-b404909c4fa0" src="https://profiles.ucr.edu/app/embed?groupId=119777&amp;profilePictureMode=always&amp;viewProfileButtonMode=always&amp;showAlphaLinks=false&amp;showFilter=false&amp;showTitle=false&amp;affiliationFilter=All&amp;viewProfilesMode=cards&amp;enableViewModeButton=false&amp;excludeStudentEmployees=false" width="100%"></iframe></p>
-    
-        </div>
-    </li>
-    
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                    </div>
-                            </div>
-            <div class="cell medium-3">
-                                    <div  class="layout__region layout__region--column-2">
-                            <div data-block-plugin-id="block_content:1cc1b939-2a3b-40b2-8323-de0a462c9101" class="ucr-custom-block">
-        <div class="grid-container full">
-            <div class="grid-x grid-padding-x">
-                
-                                
-                <div class="cell">
-                    <div style="margin-top:40px; padding: 15px 0px 15px 0px; border-top: 5px solid #FED65F;">
-<center>
-<p><img alt="Handshake Logo" src="https://careers.ucr.edu/sites/g/files/rcwecm5691/files/handshake-logo.gif" /></p>
-</center>
-
-<p class="MsoNormal"><span style="font-size:11.0pt;color:#1F497D">Employers: Click to Log into Your Handshake Account<p></p></span></p>
-
-<p class="MsoNormal"><span style="font-size:11.0pt;color:#1F497D">Students &amp; Alumni: Click to Log into Handshake via CAS or (netid)@ucr.edu Account<p></p></span></p>
-
-<p><a href="https://app.joinhandshake.com/login" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0);" target="_blank"><img alt="Employers Login" height="22" src="https://careers.ucr.edu/sites/g/files/rcwecm5691/files/employers-login-btn.png" width="78" /></a> <a href="https://auth.ucr.edu/cas/login?service=https%3A%2F%2Fucr.joinhandshake.com%2Flogin%3Fschool_id%3D627" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0);" target="_blank"> <img alt="Students Login" height="22" src="https://careers.ucr.edu/sites/g/files/rcwecm5691/files/student-login-btn.png" width="72" /></a> <a href="https://ucr.joinhandshake.com/login" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0);" target="_blank"><img alt="Alumni Login" height="22" src="https://careers.ucr.edu/sites/g/files/rcwecm5691/files/alumni-login-btn.png" width="70" /></a></p>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-                    </div>
-                            </div>
-        </div>
-    </div>
-
-  </div>
-
-</article>
-
-  </div>
-
-  </div>
-
-                    </div>
-                                </div>
-            </div>
-                    </div>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content-area">
-                <div class="grid-container">
-                                                <div class="grid-x grid-padding-x align-center">
-        <div id="block-ucr-design-1-ucriversidefootersearchblock" data-block-plugin-id="ucr_global_footer_search" class="cell show-for-medium footer-search">
-    
-        
-            <section class="google-search">
-    <button class="button footer-search-button" data-open="gscSearchFormModal">Search</button>
-</section>
-
-    </div>
-    </div>
-
-                                        <div class="grid-x grid-padding-x footer-columns">
-                                                    <div class="cell medium-auto">
-      
-      
-      <section class="footer-item ucr-footer-info">
-        <span class="footer-logo"><span class="show-for-sr">University of California, Riverside</span></span>
-        <address>
-         <p>900 University Ave.<br />
-            Riverside, CA 92521</p>
-        <p>Tel: (951) 827-1012</p>
-        </address>
-                <ul class="footer-links">
-            <li><a href="https://library.ucr.edu/" target="_blank">UCR Library</a></li>
-            <li><a href="https://campusstatus.ucr.edu/" target="_blank">Campus Status</a></li>
-            <li><a href="https://ucr.bncollege.com/shop/ucr/home" target="_blank">Campus Store</a></li>
-            <li><a href="https://jobs.ucr.edu" target="_blank">Career Opportunities</a></li>
-            <li><a href="https://diversity.ucr.edu/" target="_blank">Diversity</a></li>
-            <li><a href="https://campusmap.ucr.edu/" target="_blank">Maps and Directions</a></li>
-            <li><a href="https://www.ucr.edu/about/visitors" target="_blank">Visit UCR</a></li>
-        </ul>
-            </section>
-
-<div id="block-tobaccofree-2" data-block-plugin-id="block_content:90e35400-db71-4c50-89ce-69599e50f21a" class="ucr-custom-block">
-  
-    
-      
-            <p><a href="http://tobaccofree.ucr.edu/" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0); display: inline-flex;" target="blank"><img alt="UCR is tobacco &amp; smoke free" src="https://www.ucr.edu/sites/g/files/rcwecm986/files/UCR-TOBACCO-SMOKE-FREE.png" /></a></p>
-    
-  </div>
-
-</div>
-
-                                                                                <div class="cell medium-auto">
-            <section id="block-ucr-design-1-ucriversidefooterdeptinformationblock" data-block-plugin-id="ucr_global_footer_dept_info" class="footer-item footer-dept-info">
-        
-                
-                                                                                    
-    
-    
-    
-
-                        
-    
-    
-    
-
-    <h2>Career Center</h2>
-    <address class="address_2">
-       <p> <a href="http://campusmap.ucr.edu/?loc=BOOKS" target="_blank">            Career Center Plaza
-            <br />Riverside, CA 92521                         </a></p>
-    		<p> tel: (951) 827-3631<br />                 fax: (951) 827-2447<br />         email: <a href="mailto:careercounseling@ucr.edu">careercounseling@ucr.edu</a>        <br />alt email: <a href="mailto:careerrecruiting@ucr.edu">careerrecruiting@ucr.edu</a>         </p>
-
-        </address>
-        <p>
-        <a class="link-img link-img-location" href="http://campusmap.ucr.edu/?loc=BOOKS" target="_blank"> Find Us<br /><br />
-            <img src="/themes/custom/ucr_default/images/googlemap.png" alt="Campus map image"></a>
-    </p>
-    
-    </section>
-<div id="block-footersocialmedia" data-block-plugin-id="block_content:550a2354-3a44-411c-97d2-3ab1e4040e6c" class="ucr-custom-block">
-  
-    
-      
-            <p> </p>
-
-<section class="footer-item"><p class="social-title">Follow US:</p>
-
-<div class="social-link" style="display: inline-flex; margin-left:0px;"><a href="https://www.facebook.com/UCRiversideCareerCenter/" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0); display: inline-flex;" target="_blank"><span class="mdi mdi-facebook-box" onmouseout="this.style.color='#7A8FAB'" onmouseover="this.style.color='#ffffff'" onmouseup="this.style.color='#7A8FAB'" style="color:#7A8FAB; font-size: 3em;"> </span></a> <a href="https://www.linkedin.com/groups/88920/" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0); display: inline-flex;" target="_blank"><span class="mdi mdi-linkedin-box" onmouseout="this.style.color='#7A8FAB'" onmouseover="this.style.color='#ffffff'" onmouseup="this.style.color='#7A8FAB'" style="color:#7A8FAB; font-size: 3em;"> </span></a> <a href="http://twitter.com/ucrcareercenter" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0); display: inline-flex;" target="_blank"><span class="mdi mdi-twitter-box" onmouseout="this.style.color='#7A8FAB'" onmouseover="this.style.color='#ffffff'" onmouseup="this.style.color='#7A8FAB'" style="color:#7A8FAB; font-size: 3em;"> </span> </a> <a href="https://www.youtube.com/channel/UCDKTYGYz01W4J9YizWpNz_Q" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0); display: inline-flex;" target="_blank"><span class="mdi mdi-youtube-play" onmouseout="this.style.color='#7A8FAB'" onmouseover="this.style.color='#ffffff'" onmouseup="this.style.color='#7A8FAB'" style="color:#7A8FAB; font-size: 3em;"> </span></a> <a href="http://instagram.com/ucrcareercenter/" style="text-decoration: none !important; color: rgba(0, 0, 0, 0.0); display: inline-flex;" target="_blank"><span class="mdi mdi-instagram" onmouseout="this.style.color='#7A8FAB'" onmouseover="this.style.color='#ffffff'" onmouseup="this.style.color='#7A8FAB'" style="color:#7A8FAB; font-size: 3em;"> </span></a></div>
-</section>    
-  </div>
-
-    </div>
-
-                                                                                <div class="cell medium-auto">
-            <section  id="block-ucr-design-1-ucriversiderelatedlinks" data-block-plugin-id="system_menu_block:ucr-related-links-menu" class="footer-item footer-related-links">
-        
-                
-        <h3>Related Links</h3>
-        
-                <nav role="navigation" aria-labelledby="related-links-menu">
-        <ul class="vertical menu">
-                            <li><a href="http://agsm.ucr.edu/career_services/" target="_blank">AGSM MBA Career Services</a>
-                                    </li>
-                            <li><a href="http://finaid.ucr.edu/" target="_blank">Financial Aid</a>
-                                    </li>
-                            <li><a href="http://vcsa.ucr.edu/" target="_blank">Student Affairs</a>
-                                    </li>
-                            <li><a href="http://hr.ucr.edu/" target="_blank">Human Resources</a>
-                                    </li>
-                    </ul>
-        </nav>
-    
-
-
-    </section>
-
-<div id="block-disclaimer" data-block-plugin-id="block_content:5669e221-3777-4855-b61a-c986d0b191a2" class="ucr-custom-block">
-  
-    
-      
-            <p> </p>
-
-<section class="footer-item"><p class="social-title">Disclaimer:</p>
-
-<p>This information is accurate and reliable at time of posting, but may change without notice. Please contact the department for the most up-to-date information.</p>
-</section>    
-  </div>
-
-    </div>
-
-                                                                    </div>
-                </div>
-            </div>
-            <div class="site-legal-footer">
-                <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                        <div class="cell">
-                            <ul>
-                                <li><a href="http://www.ucr.edu/privacy.html">Privacy and Accessibility</a></li>
-                                <li><a href="http://www.ucr.edu/terms.html">Terms and Conditions</a></li>
-                                <li>© 2022 Regents of the University of California</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-    <div class="large reveal" id="gscSearchFormModal" role="search" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
-    <div class="gsc-modal-top">
-        <button class="close-button" data-close aria-label="Close Search Window" type="button"><span aria-hidden="true">&times;</span></button>
-    </div>
-    <form id="audience-search-form" name="gsc-search-form" action="/results">
-        <div class="gsc-modal-body">
-            <div class="grid-container full">
-                <div class="grid-x grid-padding-x grid-padding-y align-center-middle text-center">
-                    <div class="gsc-text-wrapper">
-                      <span class="gsc-welcome-text">Let us help you with your search</span>
-                    </div>
-                    <div class="cell">
-                        <label id="searchbox-label" class="hidden" aria-label="Enter your Search Criteria.">Enter your Search Criteria.</label>
-                        <input type="text" maxlength="255" id="audience-search" name="q" value="" aria-labelledby="searchbox-label" placeholder="Search for..." />
-                    </div>
-                                            <div class="cell medium-4">
-                            <button class="button gsc-modal-button-submit" type="submit" name="search-by" value="all">Search All UCR</button>
-                        </div>
-                        <div class="cell medium-4">
-                            <button class="button gsc-modal-button-submit" type="submit" name="search-by" value="http://careers.ucr.edu">Search This Site</button>
-                        </div>
-                        <div class="cell medium-4">
-                            <button type="button" class="button gsc-modal-button-close" data-close>Cancel</button>
-                        </div>
-                                    </div>
-            </div>
-        </div>
-    </form>
-</div>
-
-  </div>
-
-    
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/76","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"bu":{"notify_ie":-2,"notify_firefox":-2,"notify_opera":-2,"notify_safari":-2,"notify_chrome":-2,"insecure":true,"unsupported":false,"mobile":true,"position":"top","visibility_type":"hide","visibility_pages":"admin\/*","test_mode":false,"new_window":true,"no_close":false,"text_override":"","reminder":6,"reminder_closed":6,"url":"","source":"\/\/browser-update.org\/update.min.js","show_source":""},"google_analytics":{"account":{},"trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ajax":[],"user":{"uid":0,"permissionsHash":"ce149eebce62259aefa315133027f4fcf25f4687be12ce54690c28e94fc9a335"}}</script>
-<script src="/sites/g/files/rcwecm5691/files/js/js_dM5mp5TKBJtXvAw2vuwnL0gCqP4MHsQofCzcm21klk0.js"></script>
-<script src="https://static.addtoany.com/menu/page.js" async></script>
-<script src="/sites/g/files/rcwecm5691/files/js/js_nSo_BluoJ8wxbZo_mB9_btqx0-axJsmvrWDXqX_FK5A.js"></script>
-
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"07d404edfe","applicationID":"837425331","transactionName":"MVZSYRNWCxBZB0wIWggccVYVXgoNFxRZBlA5UFFWCVI=","queueTime":0,"applicationTime":69,"atts":"HRFRF1tMGB4=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
-</html>
+<meta charset="utf-8"/>
+<noscript>
+</noscript>
+<meta content="" name="description"/>
+<meta content="Career Center" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="https://careers.ucr.edu/faculty-and-staff" property="og:url"/>
+<meta content="Faculty &amp; Staff" property="og:title"/>
+<meta content="" property="og:description"/>
+<meta content="2021-08-25T16:04:30-0700" property="og:updated_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="" name="twitter:description"/>
+<meta content="Faculty &amp; Staff" name="twitter:title"/>
+<meta content="https://careers.ucr.edu/faculty-and-staff" name="twitter:url"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty &amp; Staff | Career Center</title>
+</head>
+Faculty & Staff | Career Center
+Faculty & Staff | Career Center
+Skip to main content
+A to Z Listing
+Campus Map
+Find People
+News
+UCR Home
+Skip to main content
+University of California, Riverside
+Search
+UCR Handshake Login
+Employers
+Students
+Alumni
+UC Riverside
+Career Center
+Connect • Inspire • Empower
+Search
+Home
+Employers
+Welcome Employers
+Post a Job
+Recruiting Policies
+Career Fairs
+Recruit at UCR
+Build your brand
+Internships
+Work-Study Program
+On Campus Employment
+Graduate Recruiters
+Alliance Partners
+Students
+Students
+Career Planning
+Making Career Decisions
+Exploring Options
+Staying on Track
+Preparing for Graduate & Professional Schools
+Gain Experience
+Work-Study Program
+Internships
+Undergraduate Research
+Community Service
+Work Abroad
+Getting Hired
+Finding Opportunities
+Resumes & Cover Letters
+Interviewing
+Building Connections
+Resource Hub
+Online Workshops and Resources
+UCR Handshake
+R'Professional Career Closet
+Avoid Scams & Fraud
+Graduate Students
+Communities
+Asian Pacific Students
+Black & African American Students
+Differently Abled Students
+Formerly Incarcerated Students
+Foster Youth
+International Students
+Latinx Students
+LGBTQ Students
+Middle Eastern Students
+Native American Students
+Student Veterans
+Undocumented Students
+Women
+Events
+All Events
+Career Fairs
+Employers on Campus
+Workshops
+Outcomes
+Campus Partners
+Faculty & Staff
+Career Center Speaker Request
+Career Center Room Rental Request
+Alumni
+Parents & Family
+About Us
+Contact Us
+Career Center Peer Advisors
+Values and Impact
+UCR Home
+UCR Handshake Login
+Employers
+Students
+Alumni
+Breadcrumb
+Faculty & Staff
+Faculty & Staff
+Help Your Students Plan Ahead
+The Career Center is committed to establishing collaborative relationships with campus partners in an effort to promote the social equity and mobility of UCR students. We recognize that faculty and staff across the university play a role in the career development of students, and we invite you to partner with us. Learn more about opportunities to connect below or reach out to the Student & College Engagement Team at careercounseling@ucr.edu.
+Invite Us to Your Classroom
+Career Center counselors and peer advisors are available to deliver career presentations to campus groups, classes and student organizations. Submit your request at least one month before the desired program date. We require participation of at least 15 students.  Here are some options of what we offer:
+Workshops/Presentations on topics such as our overview of services, career exploration, resume writing, and more
+Employer Information Session (Company/Organization/graduate programs representatives come and share information such as their opportunities and application process)
+Request a Career Center program.
+*Note: Programs are requested through a Project Management platform called WorkFront. All communications regarding your request will take place through this platform. If you have any trouble accessing the link, please reach out to the Student & College Engagement Team for assistance.
+Share Our Programming
+Career Fairs Open Doors
+Each year, the Career Center hosts a number of Career Fairs. These are one-day recruiting events for firms in search of candidates for full-time, part-time, and internship positions.
+Workshops & Information Sessions
+Every quarter the Career Center offers a variety of workshops, information sessions, and networking events for students geared to help students from beginning to build their resume to those who have begun to plan for life after college. Information sessions allow students to meet and talk to representatives of top companies. Throughout the years there are many formal and informal networking events from coffee chats to etiquette dinners.
+Check the Career Center calendar for any upcoming events that may address your students’ needs.
+Connect with Your Career Specialist
+Each college has a designated Career Specialist to support students, faculty, and staff. We invite you to connect with your Career Specialist to discuss partnerships and programming that would best support your students!
+Employers: Click to Log into Your Handshake Account
+Students & Alumni: Click to Log into Handshake via CAS or (netid)@ucr.edu Account
+Search
+University of California, Riverside
+900 University Ave.
+Riverside, CA 92521
+Tel: (951) 827-1012
+UCR Library
+Campus Status
+Campus Store
+Career Opportunities
+Diversity
+Maps and Directions
+Visit UCR
+Career Center
+Career Center Plaza
+Riverside, CA 92521
+tel: (951) 827-3631
+fax: (951) 827-2447
+email: careercounseling@ucr.edu alt email: careerrecruiting@ucr.edu
+Find Us
+Follow US:
+Related Links
+AGSM MBA Career Services
+Financial Aid
+Student Affairs
+Human Resources
+Disclaimer:
+This information is accurate and reliable at time of posting, but may change without notice. Please contact the department for the most up-to-date information.
+Privacy and Accessibility
+Terms and Conditions
+© 2022 Regents of the University of California
+×
+Let us help you with your search
+Enter your Search Criteria.
+Search All UCR
+Search This Site
+Cancel
