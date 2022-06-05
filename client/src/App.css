@@ -60,11 +60,21 @@
 
 .document-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 5px;
 }
 
 .document-title {
   font-weight: bold;
   margin-right: 10px;
+}
+
+.document-score {
+  color: red;
+}
+
+.document-content {
+  margin: 0;
+  text-align: left;
 }

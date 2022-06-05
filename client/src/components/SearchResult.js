@@ -7,14 +7,13 @@ const SearchResult = ({ document }) => {
         <div className="document-title">
           {document._source.title}
         </div>
-        <div>
+        <div className="document-score">
           Score: {document._score}
         </div>
       </div>
       <div>
-        {document._source.content.substring(0, 130)}...
+        <p className="document-content">{document._source.content.substring(0, 130)}...</p>
       </div>
-      
     </div>
   )
 }
