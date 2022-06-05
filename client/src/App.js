@@ -25,6 +25,12 @@ function App() {
 
   return (
     <div className="App">
+      <header className="style2">
+        <h2>
+          Search Engine
+        </h2>
+      </header>
+
       <form onSubmit={handleFormSubmit}>
         <input type="text" onChange={handleChange}/>
         <button type="submit">Search</button>
